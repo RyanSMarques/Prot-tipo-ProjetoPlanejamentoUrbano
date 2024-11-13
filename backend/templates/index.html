@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Planejamento Urbano</title>
+    <!-- Adicionando o Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Div do mapa -->
+    <div id="map"></div>
+
+    <!-- Container para o formulário -->
+    <div class="container mt-3">
+        <!-- Card para agrupar o formulário -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Upload de Dados de Tráfego</h5>
+                <!-- Formulário de Upload -->
+                <form id="uploadForm" class="form-inline" enctype="multipart/form-data">
+                    <div class="form-group mr-2">
+                        <!-- Campo para seleção do arquivo -->
+                        <input type="file" class="form-control-file" id="fileInput" accept=".csv">
+                    </div>
+                    <!-- Botão de upload estilizado -->
+                    <button type="submit" class="btn btn-primary">Carregar Dados</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Div para exibir mensagens de sucesso ou erro -->
+    <div id="message" class="text-center mt-3"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Script do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
